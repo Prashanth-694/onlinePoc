@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/adminStudent.css">
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+  
+ <h1 style="background-color: cyan;">Updated Succesfully.</h1>
+     <%if(student.length>0)
+{ 
+ student.forEach(function(info){%>
+    
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tailwend.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
+        <img src="https://st3.depositphotos.com/5532432/17928/v/450/depositphotos_179282970-stock-illustration-developer-flat-vector-icon.jpg" width="70px" height="70px">
+        <span class="ml-3 text-xl">Online Exam</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center" style="text-decoration: solid;">
+        <a class="mr-5 hover:text-gray-900" href="studentExam.html">Exam</a>
+        
+        
+      </nav>
+    </div>
+  </header>
+
+  <form action="/update" method="GET">
+    <table>
+   
+      <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>Address</th>
+          <th>Contact</th>
+      </tr>
+     <tr>
+
+        <td><input name="uName" value="<%=info.userName%>" ></td>
+        <td><input name="email" value="<%=info.email%>" readonly></td>      
+        <td><input name="city" value="<%=info.city%>" ></td>
+        <td><input name="address" value="<%=info.address%>" ></td>
+        <td><input name="contact" value="<%=info.contact%>" ></td>
+       
+    </tr>
+    
+ </table>
+ <input class="button" type="submit" value="Update">
+  </form>
+
+
+
+<%})}else{%>
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="ISO-8859-1">
+  <title>Admin Login Page</title>
+  <link rel="stylesheet" href="css/Style.css">
+  <style>body{background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8bGlicmFyeXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");}</style>
+  </head>
+  <body>
+  <div class="loginBox">
+  <img src="https://icon-library.com/images/admin-icon/admin-icon-13.jpg" class="user">
+  <h2>Adminstrator</h2>
+  <form action="/find" method="GET">
+  <p>Username</p>
+  <input type="email" name="email" placeholder="Enter UserName" required>
+  <p>Password</p>
+  <input  type="password" name="password" placeholder="......" required>
+  <br>
+  <br>
+  <input id="asub" type="submit" value="Login">
+  <br>
+  <br>
+  <a class="an" href="ForgotPassword.html">ForgotPassword</a>
+  <br>
+  <br>
+  <a class="an" href="Signin.html">New User?</a>
+  </form>
+  </div>
+  </body>
+  </html>
+  <%}%>
+
+
+
+
+
+
+</body>
+</html>

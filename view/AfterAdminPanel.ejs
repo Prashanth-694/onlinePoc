@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/adminStudent.css">
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+
+<header>
+  <h2>Admin Panel</h2>
+</header>
+<h1 style="background-color: cyan;">Added Succesfully.</h1>
+ <table>
+   
+     <tr>
+         <th>Name</th>
+         <th>Email</th>
+         <th>City</th>
+         <th>Address</th>
+         <th>Action</th>
+     </tr>
+     <%if(admin.length>0)
+{ 
+ admin.forEach(function(info,index){%>
+     <tr>
+
+        <td><input name="uName" value="<%=info.userName%>" readonly></td>
+        <td><input name="email" value="<%=info.email%>" readonly></td>
+        <td><input name="city" value="<%=info.city%>" readonly></td>
+        <td><input name="address" value="<%=info.address%>" readonly></td>
+       <td><a href='/delete?email=<%=info.email%>'><i class="fa fa-trash" style='color: red;' aria-hidden="true"></i>Delete</a></td>
+    </tr>
+    <%})}%>
+ </table>
+ 
+<a class="button" href="studentReg.html">Add Student</a>
+</body>
+</html>

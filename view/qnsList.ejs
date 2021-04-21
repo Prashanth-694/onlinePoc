@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/tailwend.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
+          <img src="https://st3.depositphotos.com/5532432/17928/v/450/depositphotos_179282970-stock-illustration-developer-flat-vector-icon.jpg" width="70px" height="70px">
+          <span class="ml-3 text-xl">Student Panel</span>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center" style="text-decoration: solid;">
+          <a class="mr-5 hover:text-gray-900" href="/profile"></a>
+          <a class="mr-5 hover:text-gray-900" href="studentExam.html"></a>
+          <a class="mr-5 hover:text-gray-900" href="/result"></a>
+          
+        </nav>
+      </div>
+    
+    </header>
+
+
+    <form action="/validation" method="GET">
+        <h1><input type="text" name="course" value="<%=course%>" readonly></h1>
+        <p>Please select your Ans:</p>
+        
+       
+        <%if(qns1.length>0)
+        { %>
+          <input type="number" name="len" value="<%=qns1.length %>" readonly>
+          <%
+         qns1.forEach(function(info){
+           
+          %>
+       <hr>
+      
+        <input type="text" name="q<%= info.qnsId %>" value="<%=info.qns%>" readonly>
+        <br>
+        <input type="radio" id="male" name="qAns<%=info.qnsId%>" value="<%=info.opt1%>">
+        <label ><%=info.opt1%></label><br>
+        <input type="radio" id="female" name="qAns<%=info.qnsId%>" value="<%=info.opt2%>">
+        <label > <%=info.opt2%></label><br>
+        <input type="radio" id="other" name="qAns<%=info.qnsId%>" value="<%=info.opt3%>">
+        <label ><%=info.opt3%></label><br>
+        <input type="radio" id="other" name="qAns<%=info.qnsId%>" value="<%=info.opt4%>">
+        <label ><%=info.opt4%></label>
+       
+        
+        <% 
+      })}%>
+        <br>  
+      <br> 
+        
+        <input type="submit" value="Submit">
+
+      </form>
+      
+
+
+
+</body>
+</html>
